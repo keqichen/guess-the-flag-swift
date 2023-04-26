@@ -69,7 +69,11 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore){
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is \(score)")
+            if scoreTitle == "Correct" {
+                Text("That's correct!")
+            } else {
+                Text("Opps, that's wrong.")
+            }
         }
     }
         
